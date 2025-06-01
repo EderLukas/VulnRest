@@ -1,0 +1,49 @@
+{
+    "schemes": [
+        "http"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "This is the documentation to a vulnerable RestApi",
+        "title": "Swagger VulnAPI",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {},
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "paths": {
+        "/hallo": {
+            "get": {
+                "description": "returns greeting",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "greets user",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/doctypes.HelloEndPointResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "doctypes.HelloEndPointResponse": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "example": "Hallo!"
+                }
+            }
+        }
+    }
+}
